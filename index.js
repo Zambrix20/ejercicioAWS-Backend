@@ -52,6 +52,9 @@ const upload = multer({
   })
 });
 
+app.get("/", (req, res) => {
+  res.status(200).json({ mensaje: "Welcome Multer API" });
+});
 
 
 app.post("/upload", upload.single("imagen"), async (req, res) => {
